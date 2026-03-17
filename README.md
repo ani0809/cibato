@@ -1,64 +1,9 @@
-# Cibato - Modern IT Company Website
+# Doctrine Lexer
 
-A stunning, highly animated website for Cibato IT company built with React, TypeScript, and Tailwind CSS.
+[![Build Status](https://github.com/doctrine/lexer/workflows/Continuous%20Integration/badge.svg)](https://github.com/doctrine/lexer/actions)
 
-## Features
+Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.
 
-- **Dynamic Hero Section** - Animated gradient text, floating particles, and pulsing backgrounds
-- **Smooth Scroll Animations** - Elements fade and slide into view as you scroll
-- **Interactive Navigation** - Dropdown menus with smooth transitions
-- **Animated Stats Counter** - Numbers count up when scrolled into view
-- **Service Showcase** - 14+ services with hover effects and gradient icons
-- **Portfolio Grid** - Filterable project showcase with category filters
-- **Testimonials** - Client reviews with star ratings
-- **Contact Form** - Professional contact form with validation
-- **Responsive Design** - Fully responsive across all devices
-- **Modern Animations** - Gradient animations, hover effects, scale transitions, and micro-interactions
+This lexer is used in Doctrine Annotations and in Doctrine ORM (DQL).
 
-## Tech Stack
-
-- React 18
-- TypeScript
-- Tailwind CSS
-- Vite
-- Lucide React (icons)
-
-## Pages Included
-
-- Home
-- Services (14+ IT services)
-- Portfolio
-- Testimonials
-- Contact
-- About Us
-- Blog
-- Our Team
-
-## Color Scheme
-
-- Primary: Cyan (#06B6D4)
-- Secondary: Blue (#2563EB)
-- Background: Dark slate (#020617, #0F172A)
-- Text: White & Gray shades
-
-## Development
-
-```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-```
-
-## Design Philosophy
-
-This is a SAMPLE prototype showcasing the animation capabilities and modern design aesthetic. The full website will include:
-- All individual service pages
-- Full portfolio with real projects
-- Blog system
-- Team member profiles
-- And much more...
+https://www.doctrine-project.org/projects/lexer.html
