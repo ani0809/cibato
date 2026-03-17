@@ -1,0 +1,352 @@
+/* Futuristic Theme CSS */
+/* Color Variables */
+:root {
+    --futuristic-dark: #0A0F1D;
+    --futuristic-blue: #00C8FF;
+    --futuristic-purple: #7A3CFF;
+    --futuristic-cyan: #29F2FF;
+    --futuristic-dark-light: #1a1f2e;
+    --futuristic-text: #E0E6ED;
+    --futuristic-text-dim: #8B92A0;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(26, 31, 46, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 200, 255, 0.1);
+}
+
+.glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+    background: rgba(26, 31, 46, 0.9);
+    border-color: rgba(0, 200, 255, 0.5);
+    box-shadow: 0 12px 48px 0 rgba(0, 200, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+/* Neon Glow Effects */
+.neon-glow-blue {
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.8),
+        0 0 20px rgba(0, 200, 255, 0.6),
+        0 0 30px rgba(0, 200, 255, 0.4);
+}
+
+.neon-glow-purple {
+    text-shadow: 0 0 10px rgba(122, 60, 255, 0.8),
+        0 0 20px rgba(122, 60, 255, 0.6),
+        0 0 30px rgba(122, 60, 255, 0.4);
+}
+
+.neon-border-blue {
+    border: 1px solid var(--futuristic-blue);
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.5),
+        inset 0 0 10px rgba(0, 200, 255, 0.2);
+}
+
+.neon-border-purple {
+    border: 1px solid var(--futuristic-purple);
+    box-shadow: 0 0 10px rgba(122, 60, 255, 0.5),
+        inset 0 0 10px rgba(122, 60, 255, 0.2);
+}
+
+/* Animated Neon Border */
+@keyframes neon-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(0, 200, 255, 0.3),
+            0 0 10px rgba(0, 200, 255, 0.2),
+            inset 0 0 5px rgba(0, 200, 255, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(0, 200, 255, 0.6),
+            0 0 25px rgba(0, 200, 255, 0.4),
+            inset 0 0 10px rgba(0, 200, 255, 0.2);
+    }
+}
+
+.neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Hologram Grid Background */
+.hologram-grid {
+    background-image:
+        linear-gradient(rgba(0, 200, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 200, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    position: relative;
+}
+
+.hologram-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(10, 15, 29, 0.8) 100%);
+    pointer-events: none;
+}
+
+/* 3D Tilt Effect */
+.tilt-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tilt-3d:hover {
+    transform: perspective(1000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale3d(1.02, 1.02, 1.02);
+}
+
+/* Magnetic Button Effect */
+.magnetic-button {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Floating Animation */
+@keyframes float-futuristic {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    25% {
+        transform: translateY(-10px) translateX(5px);
+    }
+
+    50% {
+        transform: translateY(0px) translateX(10px);
+    }
+
+    75% {
+        transform: translateY(10px) translateX(5px);
+    }
+}
+
+.float-futuristic {
+    animation: float-futuristic 6s ease-in-out infinite;
+}
+
+/* Holographic Shimmer */
+@keyframes hologram-shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.hologram-shimmer {
+    background: linear-gradient(90deg,
+            rgba(0, 200, 255, 0) 0%,
+            rgba(0, 200, 255, 0.3) 50%,
+            rgba(0, 200, 255, 0) 100%);
+    background-size: 1000px 100%;
+    animation: hologram-shimmer 3s linear infinite;
+}
+
+/* Particle Glow */
+@keyframes particle-glow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.particle-glow {
+    animation: particle-glow 2s ease-in-out infinite;
+}
+
+/* Scan Line Effect */
+@keyframes scan-line {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.scan-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 200, 255, 0.5), transparent);
+    animation: scan-line 8s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Fade Slide Up Animation */
+@keyframes fade-slide-up-futuristic {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-slide-up-futuristic {
+    animation: fade-slide-up-futuristic 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Neon Button */
+.neon-button {
+    position: relative;
+    background: linear-gradient(135deg, var(--futuristic-blue), var(--futuristic-purple));
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    font-weight: 700;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.neon-button:hover::before {
+    left: 100%;
+}
+
+.neon-button:hover {
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.6),
+        0 0 40px rgba(122, 60, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Glowing Input Fields */
+.futuristic-input {
+    background: rgba(26, 31, 46, 0.5);
+    border: 1px solid rgba(0, 200, 255, 0.3);
+    color: var(--futuristic-text);
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.futuristic-input:focus {
+    outline: none;
+    border-color: var(--futuristic-blue);
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+    background: rgba(26, 31, 46, 0.8);
+}
+
+/* Holographic Card */
+.holographic-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 200, 255, 0.1), rgba(122, 60, 255, 0.1));
+    border: 1px solid;
+    border-image: linear-gradient(135deg, var(--futuristic-blue), var(--futuristic-purple)) 1;
+    backdrop-filter: blur(10px);
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(0, 200, 255, 0.2) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+}
+
+/* Cursor Trail Effect */
+.cursor-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--futuristic-cyan), transparent);
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: screen;
+    opacity: 0.6;
+}
+
+/* Tech Lines */
+.tech-lines {
+    position: relative;
+}
+
+.tech-lines::before,
+.tech-lines::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, transparent, var(--futuristic-blue), transparent);
+    height: 1px;
+}
+
+.tech-lines::before {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.tech-lines::after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Parallax Layers */
+.parallax-layer {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Loading Spinner Futuristic */
+@keyframes spin-futuristic {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-futuristic {
+    border: 3px solid rgba(0, 200, 255, 0.2);
+    border-top: 3px solid var(--futuristic-blue);
+    border-radius: 50%;
+    animation: spin-futuristic 1s linear infinite;
+}
