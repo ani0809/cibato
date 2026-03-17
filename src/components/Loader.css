@@ -1,0 +1,115 @@
+:root {
+    --cibato-primary: #00a1fc;
+    --cibato-glow-strong: rgba(0, 161, 252, 0.45);
+    --cibato-glow-soft: rgba(0, 161, 252, 0.18);
+}
+
+.cibato-loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+    animation: loaderExit 0.6s ease forwards;
+    animation-delay: 0.9s;
+}
+
+/* FAST MOVING BRAND BACKGROUND */
+.cibato-bg {
+    position: absolute;
+    inset: -40%;
+    background:
+        radial-gradient(circle at 25% 30%,
+            var(--cibato-glow-strong),
+            transparent 55%),
+        radial-gradient(circle at 75% 65%,
+            var(--cibato-glow-soft),
+            transparent 60%);
+    animation: bgMove 3.2s ease-in-out infinite alternate;
+    filter: blur(44px);
+}
+
+/* FILM GRAIN */
+.cibato-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.22;
+    animation: noiseMove 0.6s steps(2) infinite;
+    pointer-events: none;
+}
+
+/* LOGO */
+.cibato-logo {
+    position: relative;
+    font-size: 64px;
+    letter-spacing: 14px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.96);
+    animation: logoIn 1.2s ease forwards;
+    animation-delay: 0.1s;
+    z-index: 2;
+}
+
+/* LIGHT SWEEP */
+.cibato-logo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(0, 161, 252, 0.65),
+            transparent);
+    animation: sweep 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* ANIMATIONS */
+@keyframes bgMove {
+    0% {
+        transform: translate(-3%, -3%) scale(1);
+    }
+
+    100% {
+        transform: translate(3%, 3%) scale(1.07);
+    }
+}
+
+@keyframes noiseMove {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(2px, -2px);
+    }
+}
+
+@keyframes logoIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes sweep {
+    to {
+        left: 120%;
+    }
+}
+
+@keyframes loaderExit {
+    to {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: blur(16px);
+    }
+}
